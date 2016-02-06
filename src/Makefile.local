@@ -1,0 +1,11 @@
+push :
+	darcs record
+	darcs push -av
+	(cd ~/repos/fopsite; darcs push -av; sgr)
+
+build :
+	LANG=ja_JP.UTF-8 ghc --make fopsite
+	LANG=ja_JP.UTF-8 ./fopsite rebuild
+
+check: build
+	./fopsite preview

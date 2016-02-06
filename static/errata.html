@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+           "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="stylesheet" type="text/css" href="../css/errata.css" />
+  <script src="./js/jquery-1.4.2.min.js" type="text/javascript"></script>
+  <script src="./js/jquery.tablesorter.min.js" type="text/javascript"></script>
+  <script src="./js/jquery.metadata.js" type="text/javascript"></script>
+  <title>FOP - 正誤表</title>
+ </head>
+ <body>
+  <div class="structure" id="header"><h1><a href="../index.html">FOP</a> - 正誤表</h1></div>
+  <div class="structure" id="container">
+   <div id="errata-contents">
+    <div id="errata-box">
+     <table id="errata" class="tablesorter">
+      <thead>
+       <tr>
+        <th>報告日</th>
+        <th>ページ</th>
+        <th class="{sorter: false}">修正前</th>
+        <th class="{sorter: false}">修正後</th>
+       </tr>
+      </thead>
+      <tbody>
+<!--
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+-->
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.263-下から10行目</td>
+        <td>多くのデータ型と同様に</td>
+        <td>多くのデータ型と同様には</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.269-実行例2行目</td>
+        <td>(tick "Richard" (RList RPerson))</td>
+        <td>(tick "Richard") (RList RPerson)</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.271-l.10</td>
+        <td>まずは特殊な問い合わせ age および sizeof を定義する．</td>
+        <td>残りは，興味ある仕事だけをする問い合わせ age および sizeof の定義である．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.272-l.14</td>
+        <td>与えられているものとする．</td>
+        <td>返される．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.278-l.09</td>
+        <td>Pair1 { unPair1 :: ph (α,β) }</td>
+        <td>Pair1 { unPair1 :: φ (α,β) }</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.278-l.10</td>
+        <td>Pair2 { unPair2 :: ph (α,β) }</td>
+        <td>Pair2 { unPair2 :: φ (α,β) }</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.241-l.14</td>
+        <td>これらの関数は以下のように書くこともできる．</td>
+        <td>これ以外にも，上の関数の変形版もありうる．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.241-下から6行目</td>
+        <td>生成すべく，変形版の形式化について考えよう．</td>
+        <td>生成する変形版のを構成するのは容易である．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.242-l-09以降11章中</td>
+        <td>不変性</td>
+        <td>不変条件</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.247-下から10行目</td>
+        <td>&lt;&gt;およびnestを拡張してUnionと対話する方法を指定するところもそのままである．</td>
+        <td>ただし，&lt;&gt;およびnestはUnionを扱えるように拡張しなければならない．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.250-下から8行目</td>
+        <td>入れ子になった演算子</td>
+        <td>入れ子演算子</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.254-l.02</td>
+        <td>このfillwords関数</td>
+        <td>fillwords関数</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.257-l.04</td>
+        <td>最適化されている</td>
+        <td>最適である</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.257-l.06</td>
+        <td>Hughesは，最適化され有界なコンビネータに対して改行を選択するアルゴリズムはないとしている．</td>
+        <td>Hughesのコンビネータでは，改行を選択する最適で有界なアルゴリズムはないと述べている．</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.257-下から11行目</td>
+        <td>最適化され</td>
+        <td>最適で</td>
+       </tr>
+       <tr>
+        <td>2011/10/22</td>
+        <td>p.257-l.04</td>
+        <td>出版</td>
+        <td>論文発表</td>
+       </tr>
+       <tr>
+        <td>2011/10/04</td>
+        <td>p.213-l.07</td>
+        <td>newtype Subst = MkSubst [(Var,Term)]</td>
+        <td>newtype Subst = MkSubst [(Variable,Term)]</td>
+       </tr>
+       <tr>
+        <td>2011/09/03</td>
+        <td>p.062-基数ソート</td>
+        <td>関数のリストについて辞書順になるような順列生成アルゴリズム</td>
+        <td>関数のリストにしたがってリストを辞書順に並び換えるアルゴリズム</td>
+       </tr>
+       <tr>
+        <td>2011/09/03</td>
+        <td>p009-l.11</td>
+        <td>実装では，c を a あるいは b とマージし，</td>
+        <td>実装はそのままである．join 関数は色をつかって c を a と b の
+	 どちらとマージするかを決め，</td>
+       </tr>
+       <tr>
+        <td>2011/09/03</td>
+        <td>p.017-練習問題1.8</td>
+        <td>FIFOキューへのスロットを追加せよ．</td>
+        <td>FIFOキューへ 3 つめのスロットを追加せよ．</td>
+       </tr>
+       </tr>
+       <tr>
+        <td>2011/07/22</td>
+        <td>p.056-練習問題3.29</td>
+        <td>List b</td>
+        <td>List β</td>
+       </tr>
+       <tr>
+        <td>2011/07/22</td>
+        <td>p.058-l.03</td>
+        <td>生成するではなく，</td>
+        <td>生成するのではなく，</td>
+       </tr>
+       <tr>
+        <td>2011/07/22</td>
+        <td>p.059-練習問題3.37</td>
+        <td>ほかには，Hughesのリスト表現をプログラムの型から導出して<br />
+	 直接リスト変換子として表現する方法がある．</td>
+        <td>別の方法として，リストをリスト変換子で表すというHughesの<br />
+	 表現を直接使え．これにより以下のような型のプログラムが導出できる．</td>
+       </tr>
+       <tr>
+        <td>2011/07/22</td>
+        <td>p.060-l.07</td>
+        <td>結合的なfに対してlzwの重要な性質が与えられれば，</td>
+        <td>結合的なfに対してlzwの以下に示す重要な性質が与えられれば，</td>
+       </tr>
+       <tr>
+        <td>2011/06/27</td>
+        <td>p.055-下から6行目</td>
+        <td>推論せよ．</td>
+        <td>導け．</td>
+       </tr>
+       <tr>
+        <td>2011/06/27</td>
+        <td>p.172-l.15</td>
+        <td>2n-1まで</td>
+        <td>2^n -1まで</td>
+       </tr>
+       <tr>
+        <td>2011/06/27</td>
+        <td>p.173-l.03</td>
+        <td>plus</td>
+        <td>puls</td>
+       </tr>
+       <tr>
+        <td>2011/06/15</td>
+        <td>p.200-l.16</td>
+        <td>その全コストに応じて</td>
+        <td>その全コストごとに</td>
+       </tr>
+       <tr>
+        <td>2011/06/15</td>
+        <td>p.200-l.17</td>
+        <td>...引数のコストとfの結果を計算するコストである．</td>
+        <td>...引数のコストにfの結果を計算するコストを加えたものである．</td>
+       </tr>
+       <tr>
+        <td>2011/06/10</td>
+        <td>p.047 練習問題3.3</td>
+        <td>map g</td>
+        <td>mapL g</td>
+       </tr>
+       <tr>
+        <td>2011/06/10</td>
+        <td>p.048-最後の行</td>
+        <td>ここでMaybe a型の具体的な型は，α型の具体的な型を<br />
+	 持つかもしれないし，持たないかもしれない</td>
+        <td>ここでMaybe a型の具体的な型は，α型の具体的な値を<br />
+	 持っても持たなくてもよい．</td>
+       </tr>
+       <tr>
+        <td>2011/06/10</td>
+        <td>p.106-l.05</td>
+        <td>cを縛るということである．</td>
+        <td>新しい範囲にcを限るということである．</td>
+       </tr>
+       <tr>
+        <td>2011/05/20</td>
+        <td>p.098-練習問題5.16</td>
+        <td>定義を<strong>拡張</strong>して</td>
+        <td>定義を<strong>展開</strong>して</td>
+       </tr>
+       <tr>
+        <td>2011/05/20</td>
+        <td>p.099-下から3行目</td>
+        <td><em>sum</em>，<em>foldr</em>，<em>fst</em>の定義と同様，<strong>using</strong>節は省略する．</td>
+        <td>ここでは<strong>using</strong>節および<em>sum</em>，<em>foldr</em>，<em>fst</em>の定義は示さない．</td>
+       </tr>
+       <tr>
+        <td>2011/05/20</td>
+        <td>p.101-練習問題5.23</td>
+        <td>浮動<strong>let</strong>式に対する</td>
+        <td><strong>let</strong>式を移動するための</td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.089-図5.2</td>
+        <td>definition mindepthp</td>
+        <td>definition mindepth</td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.093-最後の行</td>
+        <td><em>xs</em>は，付帯条件の右辺を見て必要だと考えた<em>fastreverse xs</em>という式として出現するわけではない．</td>
+        <td>付帯条件の右辺を見て<em>xs</em>は<em>fastreverse xs</em>という式の中で出現する必要があると考えたが，そうはなっていない．</td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.094-中ほど</td>
+        <td><em>foldr (λa b zs → b (a:zs)) (λzs → zs)</em></td>
+        <td><em>foldr (λa b zs → b (a:zs)) (λzs → zs) xs</em></td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.094-中ほど</td>
+        <td><em>fastreverse = foldr (λa b zs → b (a:zs)) (λzs → zs) ys</em></td>
+        <td><em>fastreverse xs ys = foldr (λa b zs → b (a:zs)) (λzs → zs) xs ys</em></td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.095-練習問題5.12</td>
+        <td><em>flatten (Leaf a) = a</em></td>
+        <td><em>flatten (Leaf a) = [a]</em></td>
+       </tr>
+       <tr>
+        <td>2011/05/07</td> 
+        <td>p.095-練習問題5.12</td>
+        <td>ここでは途中の置き換えに注意を払いながら，<em>fastreverse</em>に対して行った上述の導出を繰り返し用いよ．</td>
+        <td>途中の置き換えに注意しながら，<em>fastreverse</em>に対して行った上述の導出をここでも行え．</td>
+       </tr>
+       <tr>
+        <td>2011/04/15</td> 
+        <td>p.086-最後の行</td>
+        <td><em>mid d m</em></td>
+        <td><em>min d m</em></td>
+       </tr>
+       <tr>
+        <td>2011/04/15</td> 
+        <td>p.087-下から4行目</td>
+        <td>ことに上では<em>md</em>の定義を</td>
+        <td>ことに上では<em>md</em>の仕様を</td>
+       </tr>
+       <tr>
+        <td>2011/02/06</td> 
+        <td>p.217</td>
+        <td><em>add</em>の写像変換子への一般化では，<strong>ポイントワイズにした関数を</strong>足し合せる</td>
+        <td><em>add</em>の写像変換子への一般化では，<strong>関数をポイントワイズに</strong>足し合せる</td>
+       </tr>
+       <tr>
+        <td>2010/11/20</td> 
+        <td>p.222-練習問題10.4</td>
+        <td><code>first f >>> (id × g)</code></td>
+        <td><code>first f >>> pure (id × g)</code></td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+     以下は2刷で修正済み．
+     </p>
+     <table id="errata" class="tablesorter">
+      <thead>
+       <tr>
+        <th>報告日</th>
+        <th>ページ</th>
+	<th class="{sorter: false}">修正前</th>
+        <th class="{sorter: false}">修正後</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>2010/06/18</td> 
+        <td>o.004-l.04</td>
+        <td>〜について<strong>のが</strong>理解だけが〜</td>
+        <td>〜ついて<strong>の</strong>理解だけが〜</td>
+       </tr>
+       <tr>
+        <td>2010/06/03</td> 
+        <td>p.042</td>
+        <td><code>prop_Exclusive :: Form -> Property</code></td>
+	<td><code>prop_Exclusive :: Form -> Bool</code></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer" class="structure">
+   &copy; 2010 Nobuo Yamashita all rights reserved.
+  </div>
+  <script type="text/javascript">
+    $.tablesorter.defaults.widgets = ['zebra'];
+    $("#errata").tablesorter(); 
+  </script>
+ </body>
+</html>

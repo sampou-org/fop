@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+           "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="./css/default.css" />
+  <link rel="stylesheet" type="text/css" href="./css/syntax.css" />
+  <title>FOP - 第８章 Lava: 関数によるハードウェア記述</title>
+ </head>
+ <body>
+  <div class="structure" id="header">
+   <h1><a href="index.html">FOP</a> - 第８章 Lava: 関数によるハードウェア記述</h1>
+  </div>
+  <div class="structure" id="container">
+   <div id="primary-contents">
+    <div id="box">
+     <p
+>回路の結線パターンをHaskellで表す．</p
+><div id="&#38306;&#36899;&#12469;&#12452;&#12488;"
+><h2
+  >関連サイト</h2
+  ><p
+  >Lava の派生</p
+  ><ul
+  ><li
+    ><a href="http://raintown.org/lava/"
+      >The Lava Hardware Description Language</a
+      ></li
+    ><li
+    ><a href="http://hackage.haskell.org/package/chalmers-lava2000"
+      >chalmers-lava2000: Hardware description library</a
+      ></li
+    ><li
+    ><a href="http://hackage.haskell.org/package/Wired"
+      >Wired: Wire-aware hardware description</a
+      ></li
+    ><li
+    ><a href="http://hackage.haskell.org/package/york-lava"
+      >york-lava: A library for digital circuit description</a
+      ></li
+    ><li
+    ><a href="http://www.cs.york.ac.uk/fp/reduceron/"
+      >Reduceron</a
+      ></li
+    ></ul
+  ><p
+  >Chalmers工科大学の講義</p
+  ><ul
+  ><li
+    ><a href="http://www.cse.chalmers.se/edu/year/2010/course/TDA956/TH/l08.html"
+      >Hardware description in Functional Languages and Introduction to Lava</a
+      ></li
+    ><li
+    ><a href="http://www.cse.chalmers.se/edu/year/2010/course/TDA956/Tools/lava/"
+      >How to Use the Lava System (2010)</a
+      ></li
+    ></ul
+  ><p
+  >著者のページ</p
+  ><ul
+  ><li
+    ><a href="http://www.chalmers.se/cse/EN/people/claessen-koen"
+      >Koen Claessen</a
+      ></li
+    ><li
+    ><a href="http://www.chalmers.se/cse/EN/people/sheeran-mary"
+      >Mary Sheeran</a
+      ></li
+    ><li
+    ><a href="http://research.google.com/pubs/SatnamSingh.html"
+      >Satnam Singh</a
+      ></li
+    ></ul
+  ></div
+><div id="chalmers-lava2000-&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;"
+><h2
+  >chalmers-lava2000 のインストール</h2
+  ><p
+  >現時点で手に入れやすい Lava のパッケージは Hackage に登録されている chalmers-lava2000 である．これを cabal コマンドを使ってインストールする．</p
+  ><pre
+  ><code
+    >$ cabal update
+$ cabal install chalmers-lava2000
+</code
+    ></pre
+  ><p
+  >通常はこれで，$HOME/.cabal/ 以下に必要なものがインストールされる．</p
+  ></div
+><div id="chalmers-lava2000-&#12391;&#22806;&#37096;&#23450;&#29702;&#35388;&#26126;&#22120;&#12434;&#20351;&#12358;&#26041;&#27861;linux"
+><h2
+  >chalmers-lava2000 で外部定理証明器を使う方法（Linux）</h2
+  ><p
+  >chalmers-lava2000 では回路の性質を検証する関数 verify が使えない．これは verify に対応する外部定理証明器へのラッパーが提供されていないためである．その代りに satzoo あるいは smv へのラッパーが用意されているのでこれを使う．</p
+  ><div id="satzoo-&#12434;&#20351;&#12358;"
+  ><h3
+    >satzoo を使う</h3
+    ><p
+    >定理証明器 <a href="http://een.se/niklas/Satzoo/"
+      >satzoo</a
+      > はすでに DEPRICATED! とのことで，代りに <a href="http://minisat.se/"
+      >MiniSat</a
+      > を使う．まず，</p
+    ><div id="minisat-&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;"
+    ><h4
+      >minisat のインストール</h4
+      ><p
+      >minisat を /usr/local/bin/ にインストールし，これに satzoo という別名を付けておく．</p
+      ><pre
+      ><code
+	>$ wget http://minisat.se/downloads/minisat2-070721.zip
+$ unzip minisat2-070721.zip
+$ cd minisat
+$ cd simp
+$ make rs
+$ sudo cp minisat_static /usr/local/bin/minisat
+$ sudo ln -s /usr/local/bin/minisat /usr/local/bin/satzoo
+</code
+	></pre
+      ></div
+    ><div id="&#12521;&#12483;&#12497;&#12540;&#12434;&#35373;&#23450;"
+    ><h4
+      >ラッパーを設定</h4
+      ><p
+      >利用時に環境変数 Lava2000_Satzoo が /usr/local/bin/satzoo を指すようにしておく．シェルとして bash を使っているなら，$HOME/.bashrc に</p
+      ><pre
+      ><code
+	>export Lava2000_Satzoo=/usr/local/bin/satzoo
+</code
+	></pre
+      ><p
+      >を書いておけばよいでしょう．ラッパースクリプトに実行パーミッションを立てる．chalmers-lava2000 を前述のようにインストールしたのなら，ラッパースクリプトは $HOME/.cabal/share/chalmers-lava2000-<version>/Scripts に置かれているはず.</p
+      ><pre
+      ><code
+	>$ chmod +x $HOME/.cabal/share/chalmers-lava2000-1.1.1/Scripts/satzoo.wrapper
+</code
+	></pre
+      ></div
+    ></div
+  ></div
+>
+    </div>
+   </div>
+   <div id="secondary-contents">
+    <div id="navigation">
+     <div id="lastupdate">Last update : 2010-07-02 03:42:02 JST</div>
+     <a href="./index.html">先頭ページ</a>&nbsp;|&nbsp;<a href="./static/errata.html">正誤表</a>
+     <ol start="1">
+      <li><a href="./chap01.html">二分ヒープ木の楽しみ</a></li>
+      <li><a href="./chap02.html">仕様に基づくテスト</a></li>
+      <li><a href="./chap03.html">おりがみプログラミング</a></li>
+      <li><a href="./chap04.html">Haskellで音楽を記述し解釈する</a></li>
+      <li><a href="./chap05.html">融合変換を自動化する</a></li>
+      <li><a href="./chap06.html">金融取引契約の書き方</a></li>
+      <li><a href="./chap07.html">関数画像</a></li>
+      <li><a href="./chap08.html">Lava: 関数によるハードウェアの記述</a></li>
+      <li><a href="./chap09.html">論理プログラミングのためのコンビネータ</a></li>
+      <li><a href="./chap10.html">アローと計算</a></li>
+      <li><a href="./chap11.html">もっと整ったプリティプリンタ</a></li>
+      <li><a href="./chap12.html">ファントム型を楽しむ</a></li>
+     </ol>
+     <a href="http://web2.comlab.ox.ac.uk/oucl/publications/books/fop/">原書サポートサイト</a>
+    </div>
+     <a href="http://www.sampou.org/cgi-bin/haskell.cgi?Books%3aFOP%3aBugReport">翻訳書バグ報告</a>
+   </div>
+  </div>
+  <div id="footer" class="structure">
+   &copy; 2010-2012 Nobuo Yamashita all rights reserved.
+  </div>
+ </body>
+</html>
